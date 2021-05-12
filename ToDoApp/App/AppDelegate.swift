@@ -9,6 +9,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       didFinishLaunchingWithOptions launchOptions:
         [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
       FirebaseApp.configure()
+        if Auth.auth().currentUser == nil {
+      Auth.auth().signInAnonymously()
+        }
       return true
     }
   }
